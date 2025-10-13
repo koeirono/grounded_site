@@ -3,31 +3,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Feel Grounded</title>
-    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Feel Grounded</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            greeny: '#2F855A',
+            forest: '#1E3A2A'
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-    <header class="site-header">
-        <nav>
-            <ul class="nav-list">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="/contact/">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="bg-gray-50 flex flex-col min-h-screen">
 
-    <section class="contact-section">
-        <img src="{% static 'main/images/peaceful-landscape.jpg' %}" alt="Peaceful landscape" class="section-img">
-        <h1>Contact Us</h1>
-        <p>We’d love to hear from you. Reach out with any questions, suggestions, or just to say hello.</p>
-        <p>Email: <a href="mailto:hello@feelgrounded.com">hello@feelgrounded.com</a></p>
-    </section>
+  <header class="flex justify-between items-center px-8 py-6 bg-forest text-white">
+    <div class="text-3xl font-bold">Grounded<span class="text-greeny">.</span></div>
+    <nav>
+      <ul class="flex space-x-6">
+        <li><a href="/" class="hover:text-green-300">Home</a></li>
+        <li><a href="/about/" class="hover:text-green-300">About</a></li>
+        <li><a href="/contact/" class="hover:text-green-300">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <footer>
-        <p>&copy; 2025 Feel Grounded</p>
-    </footer>
+  <main class="flex-1 py-16">
+    <div class="max-w-4xl mx-auto px-8">
+      <h1 class="text-4xl font-bold text-forest mb-4 text-center">Get in Touch</h1>
+      <div class="w-24 h-2 bg-greeny mb-8 mx-auto"></div>
+      <p class="text-lg text-gray-700 text-center mb-12">
+        We’d love to hear from you! Whether you have questions about our plants, classes, or just want to say hello, send us a message and we’ll get back to you as soon as possible.
+      </p>
+
+      <form action="#" method="POST" class="bg-white rounded-xl shadow-lg p-8 space-y-6">
+        <div>
+          <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-greeny focus:border-transparent">
+        </div>
+
+        <div>
+          <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-greeny focus:border-transparent">
+        </div>
+
+        <div>
+          <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Your Message" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-greeny focus:border-transparent"></textarea>
+        </div>
+
+        <button type="submit" class="bg-greeny hover:bg-green-600 text-white text-2xl font-medium px-6 py-3 rounded shadow transition-colors w-full">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="bg-forest text-white py-8 mt-auto">
+    <div class="max-w-6xl mx-auto px-8 text-center">
+      <p>&copy; 2025 Grounded. All rights reserved.</p>
+      <p class="mt-2 text-gray-300">Follow us on 
+        <a href="#" class="underline hover:text-greeny">Instagram</a>, 
+        <a href="#" class="underline hover:text-greeny">Facebook</a>, 
+        <a href="#" class="underline hover:text-greeny">Twitter</a>
+      </p>
+    </div>
+  </footer>
+
 </body>
 </html>

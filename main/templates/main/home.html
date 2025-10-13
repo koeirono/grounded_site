@@ -3,43 +3,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feel Grounded</title>
-    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feel Grounded</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            greeny: '#2F855A',
+            forest: '#1E3A2A'
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-    <header class="site-header">
-        <h1>Feel Grounded</h1>
-        <nav>
-            <ul class="nav-list">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="/contact/">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="bg-gray-50 flex flex-col min-h-screen">
 
-    <section class="intro">
-        <img src="{% static 'main/images/forest.jpg' %}" alt="Peaceful forest" class="section-img">
-        <p>Take a breath. Slow down. Step back into yourself.</p>
-        <p>Feel Grounded is here to help you reconnect with the present, naturally and gently.</p>
-    </section>
+  <header class="flex justify-between items-center px-8 py-6 bg-forest text-white">
+    <div class="text-3xl font-bold">Grounded<span class="text-greeny">.</span></div>
+    <nav>
+      <ul class="flex space-x-6">
+        <li><a href="/" class="hover:text-green-300">Home</a></li>
+        <li><a href="/about/" class="hover:text-green-300">About</a></li>
+        <li><a href="/contact/" class="hover:text-green-300">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section class="mindfulness">
-        <img src="{% static 'main/images/mindfulness.jpg' %}" alt="Meditation practice" class="section-img">
-        <h2>Simple Practices</h2>
-        <p>Short, everyday exercises to bring awareness and calm to your day.</p>
-    </section>
+  <div class="flex flex-col-reverse sm:flex-row flex-1">
+    <div class="w-full sm:w-8/12 flex flex-col justify-center px-8 sm:px-16 bg-green-50/70">
+      <h1 class="text-4xl sm:text-6xl font-bold mb-4">
+        Where <span class="text-greeny">Plant Care</span> meets Self Care
+      </h1>
+      <div class="w-24 h-2 bg-greeny my-4"></div>
+      <p class="text-xl mb-8">
+        At Grounded, we believe that tending to plants is more than a hobby - it’s a form of healing. In caring for something living, we slow down, reconnect, and make space for our own growth. Whether you're repotting a new leaf or pausing for a matcha in our café, every experience here is designed to help you return to yourself.<br><br>
+        This isn’t just a plant shop. It’s a place to root, restore, and reimagine what wellness can look like—one breath, one bloom, one moment at a time.
+      </p>
+      <a href="about/">
+      <button class="bg-greeny hover:bg-green-600 text-white text-2xl font-medium px-6 py-3 rounded shadow transition-colors">
+        Learn More
+      </button></a>
+    </div>
 
-    <section class="lifestyle">
-        <img src="{% static 'main/images/nature-path.jpg' %}" alt="Nature path" class="section-img">
-        <h2>Intentional Living</h2>
-        <p>Guides and reflections to help you live with clarity, balance, and meaning.</p>
-    </section>
+    <div class="w-full sm:w-4/12 flex">
+    <img 
+      src="https://images.unsplash.com/photo-1536147116438-62679a5e01f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" 
+      alt="Leafs" 
+      class="w-full h-full object-cover"
+    >
+  </div>
+  </div>
 
-    <footer>
-        <p>&copy; 2025 Feel Grounded</p>
-    </footer>
+  <section class="bg-green-50 py-16">
+    <div class="max-w-6xl mx-auto px-8">
+      <h2 class="text-4xl font-bold text-forest mb-8 text-center">Plant Sale</h2>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <img src="{% static 'main/images/fiddle.jpg' %}" alt="Fiddle Leaf Fig" class="w-full h-56 sm:h-64 md:h-72 object-cover">
+          <div class="p-4">
+            <h3 class="text-2xl font-semibold text-forest mb-2">Fiddle Leaf Fig</h3>
+            <p class="text-gray-700 mb-2">Perfect for living rooms and offices, adds a touch of calm green.</p>
+            <span class="text-greeny font-bold text-xl">$45</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <img src="{% static 'main/images/monstera.jpg' %}" alt="Fiddle Leaf Fig" class="w-full h-56 sm:h-64 md:h-72 object-cover">
+          <div class="p-4">
+            <h3 class="text-2xl font-semibold text-forest mb-2">Monstera Deliciosa</h3>
+            <p class="text-gray-700 mb-2">Easy to care for, with iconic split leaves.</p>
+            <span class="text-greeny font-bold text-xl">$38</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+          <img src="{% static 'main/images/snake.jpg' %}" alt="Fiddle Leaf Fig" class="w-full h-56 sm:h-64 md:h-72 object-cover">
+          <div class="p-4">
+            <h3 class="text-2xl font-semibold text-forest mb-2">Snake Plant</h3>
+            <p class="text-gray-700 mb-2">Low-maintenance and air-purifying, perfect for beginners.</p>
+            <span class="text-greeny font-bold text-xl">$25</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-green-50 py-16">
+  <div class="max-w-6xl mx-auto px-8">
+    <h2 class="text-4xl font-bold text-forest mb-8 text-center">Plant Care Classes</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col">
+        <img src="{% static 'main/images/watering.jpg' %}" alt="Beginner Plant Care" class="w-full h-56 sm:h-64 md:h-72 object-cover">
+        <div class="p-4 flex flex-col flex-1 justify-between">
+          <div>
+            <h3 class="text-2xl font-semibold text-forest mb-2">Beginner Plant Care</h3>
+            <p class="text-gray-700 mb-4">Learn the basics of watering, sunlight, and plant placement for healthy growth.</p>
+          </div>
+          <button class="bg-greeny hover:bg-green-600 text-white text-2xl font-medium px-6 py-3 rounded shadow transition-colors">
+            Join Class
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col">
+        <img src="{% static 'main/images/pruning.jpg' %}" alt="Advanced Pruning" class="w-full h-56 sm:h-64 md:h-72 object-cover">
+        <div class="p-4 flex flex-col flex-1 justify-between">
+          <div>
+            <h3 class="text-2xl font-semibold text-forest mb-2">Advanced Pruning</h3>
+            <p class="text-gray-700 mb-4">Techniques for shaping plants, promoting growth, and maintaining aesthetics.</p>
+          </div>
+          <button class="bg-greeny hover:bg-green-600 text-white text-2xl font-medium px-6 py-3 rounded shadow transition-colors">
+            Join Class
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col">
+        <img src="{% static 'main/images/garden.jpg' %}" alt="Indoor Gardening" class="w-full h-56 sm:h-64 md:h-72 object-cover">
+        <div class="p-4 flex flex-col flex-1 justify-between">
+          <div>
+            <h3 class="text-2xl font-semibold text-forest mb-2">Indoor Gardening</h3>
+            <p class="text-gray-700 mb-4">Tips for creating a lush indoor garden, improving air quality, and boosting mood.</p>
+          </div>
+          <button class="bg-greeny hover:bg-green-600 text-white text-2xl font-medium px-6 py-3 rounded shadow transition-colors">
+            Join Class
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer class="bg-forest text-white py-8 mt-auto">
+    <div class="max-w-6xl mx-auto px-8 text-center">
+      <p>&copy; 2025 Grounded. All rights reserved.</p>
+      <p class="mt-2 text-gray-300">Follow us on 
+        <a href="#" class="underline hover:text-greeny">Instagram</a>, 
+        <a href="#" class="underline hover:text-greeny">Facebook</a>, 
+        <a href="#" class="underline hover:text-greeny">Twitter</a>
+      </p>
+    </div>
+  </footer>
+
 </body>
 </html>
