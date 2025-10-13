@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Feel Grounded</title>
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+</head>
+<body>
+    <header class="site-header">
+        <nav>
+            <ul class="nav-list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-section">
+        <img src="{% static 'main/images/peaceful-landscape.jpg' %}" alt="Peaceful landscape" class="section-img">
+        <h1>Contact Us</h1>
+        <p>We’d love to hear from you. Reach out with any questions, suggestions, or just to say hello.</p>
+        <p>Email: <a href="mailto:hello@feelgrounded.com">hello@feelgrounded.com</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Feel Grounded</p>
+    </footer>
+</body>
+</html>

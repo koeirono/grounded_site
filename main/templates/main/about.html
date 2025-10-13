@@ -1,11 +1,40 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>About - Feel Grounded</title>
-  <link rel="stylesheet" href="{% static 'main/style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Feel Grounded</title>
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
 </head>
 <body>
-  <h1>About Feel Grounded</h1>
-  <p>We help you reconnect with yourself through mindfulness and simplicity.</p>
+    <header class="site-header">
+        <nav>
+            <ul class="nav-list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="about-section">
+        <img src="{% static 'main/images/meditation.jpg' %}" alt="Meditation" class="section-img">
+        <h1>About Feel Grounded</h1>
+        <p>
+            Feel Grounded is a space for mindfulness, simplicity, and intentional living.
+            Our goal is to help you reconnect with yourself and the world around you,
+            creating calm, balance, and presence in everyday life.
+        </p>
+        <p>
+            Through guided practices, reflections, and resources, we aim to make
+            grounding yourself simple, natural, and enjoyable.
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Feel Grounded</p>
+    </footer>
 </body>
 </html>

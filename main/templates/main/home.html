@@ -1,22 +1,45 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Feel Grounded</title>
-  <link rel="stylesheet" href="{% static 'main/style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feel Grounded</title>
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
 </head>
 <body>
-  <header>
-    <h1>Welcome to Feel Grounded</h1>
-    <nav>
-      <a href="/">Home</a> | 
-      <a href="/about/">About</a> | 
-      <a href="/contact/">Contact</a>
-    </nav>
-  </header>
+    <header class="site-header">
+        <h1>Feel Grounded</h1>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main>
-    <h2>Find your calm</h2>
-    <p>This is a simple Django site using only static HTML pages.</p>
-  </main>
+    <section class="intro">
+        <img src="{% static 'main/images/forest.jpg' %}" alt="Peaceful forest" class="section-img">
+        <p>Take a breath. Slow down. Step back into yourself.</p>
+        <p>Feel Grounded is here to help you reconnect with the present, naturally and gently.</p>
+    </section>
+
+    <section class="mindfulness">
+        <img src="{% static 'main/images/mindfulness.jpg' %}" alt="Meditation practice" class="section-img">
+        <h2>Simple Practices</h2>
+        <p>Short, everyday exercises to bring awareness and calm to your day.</p>
+    </section>
+
+    <section class="lifestyle">
+        <img src="{% static 'main/images/nature-path.jpg' %}" alt="Nature path" class="section-img">
+        <h2>Intentional Living</h2>
+        <p>Guides and reflections to help you live with clarity, balance, and meaning.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Feel Grounded</p>
+    </footer>
 </body>
 </html>
