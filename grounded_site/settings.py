@@ -12,6 +12,14 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+from decouple import config
+import dj_database_url
+
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +33,7 @@ SECRET_KEY = 'django-insecure-01=+m%ln98yk^4i!+*4%1e*s#icb&=98(!$(mgg5)4vhhjk7dg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,7 +46,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
+    'cloudinary',
 ]
+
+# cloudinary.config(
+#     cloud_name = 'drvhqx6ge',
+#     api_key = '677178873143744',
+#     api_secret = 'lh5RTxLiZJO3OzWwFS0Tfxu2ONc'   
+# )
+
+cloudinary.config(
+    cloud_name = config('CLOUDINARY_CLOUD_NAME'),
+    api_key = config('CLOUDINARY_API_KEY'),
+    api_secret = config('CLOUDINARY_API_SECRET')   
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -73,11 +94,30 @@ WSGI_APPLICATION = 'grounded_site.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql', 
+#         'NAME': 'blogs_app_db',
+#         'USER': 'blogs_app_user',
+#         'PASSWORD': '123456',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': config('DATABASE_ENGINE'), 
+#         'NAME': config('DATABASE_NAME'),
+#         'USER': config('DATABASE_USER'),
+#         'PASSWORD': config('DATABASE_PASSWORD'),
+#         'HOST': config('DATABASE_HOST'),
+#         'PORT': config('DATABASE_PORT'),
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default':dj_database_url.parse("postgresql://grounded_user:7B3mSOZLOSh3QjPxC9z490Q6PFYdIIpI@dpg-d3ob2emr433s739unn40-a.oregon-postgres.render.com/grounded")
 }
 
 
@@ -116,6 +156,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
